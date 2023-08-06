@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="mainpage">
+      <div class="header">
+        <h4 id="timeclock" class="headerleft"></h4>
+        <div id="headerright">
+          <img
+            src="./icon/phone.png"
+            alt=""
+            class="header-right-item"
+          />
+          <img
+            src="./icon/internet.png"
+            alt=""
+            class="header-right-item"
+          />
+          <img
+            src="./icon/battery.png"
+            alt=""
+            class="header-right-item"
+          />
+        </div>
+      </div>
+      <h4 id="title">Temperature converter</h4>
+      <div class="mainzone">
+        <div class="left">
+          <label for="" class="mainitem">Degrees</label>
+          <input
+            type="text"
+            placeholder="0"
+            inputmode="numeric"
+            id="degreeinput"
+            class="mainitem"
+          />
+        </div>
+        <div class="right">
+          <label for="" class="mainitem">Type</label>
+          <!-- <br /> -->
+          <select
+            name="scale-select"
+            id="converttype"
+            name="scales"
+            class="mainitem"
+          >
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Celsius">Celsius</option>
+          </select>
+        </div>
+      </div>
+      <div class="resultdiv">
+        <label for="" class="mainitem">Result</label>
+        <p class="mainitem" id="resultoutput">Result</p>
+      </div>
+      <button type="button" onclick="showResult()" id="convertbutton">
+        Convert
+      </button>
+    </div>
+
+    <script>
+      setInterval(updatetime);
+      function updatetime() {
+        let date = new Date();
+        let hour = new Date().getHours().toString().padStart(2, "0");
+        let minute = new Date().getMinutes().toString().padStart(2, "0");
+        timeclock.innerHTML = hour + ":" + minute;
+        updatetime();
+      }
+
+      function showResult() {
+        var inputvalue = document.getElementById("degreeinput").value;
+        var convertType = document.getElementById("converttype").value;
+        var result = document.getElementById("resultoutput");
+        if (!isNaN(inputvalue)) {
+          switch (convertType) {
+            case "Fahrenheit":
+              result = celsToFahren(inputvalue) + " °F";
+              break;
+            case "Celsius":
+              result = fahrenToCels(inputvalue) + " °C";
+              break;
+            default:
+              console.log("Err!");
+          }
+          resultoutput.innerHTML = result;
+        } else {
+          resultoutput.innerHTML = "Enter numerical value.";
+        }
+
+        function celsToFahren(c) {
+          return c * 1.8 + 32;
+        }
+        function fahrenToCels(f) {
+          return (f - 32) / 1.8;
+        }
+      }
+
+      // $("#convertbutton").keypress(function (event) {
+      //   if (event.keyCode === 13) {
+      //     console.log('hsfsd')
+      //   }
+      // });
+    </script>
+  </body>
+</html>

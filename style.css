@@ -1,0 +1,134 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #f3f6fa;
+  /* background-color: skyblue; */
+}
+
+.mainpage {
+  background-color: #ffffff;
+  height: 350px;
+  width: 275px;
+  position: absolute;
+  border-radius: 10px;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  box-shadow: 2px 2px 2px #c9dfff;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.headerleft {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#headerright {
+  width: max-content;
+  width: 40%;
+  height: fit-content;
+}
+.header-right-item {
+  width: 18.5px;
+  height: 18.5px;
+  float: right;
+  margin-right: 2px;
+  padding: 2px;
+}
+
+#title {
+  text-align: center;
+  padding: 5px 0px;
+}
+
+.mainzone {
+  display: flex;
+  padding: 10px 0px;
+}
+
+.mainzone .left {
+  width: 50%;
+}
+
+.mainzone .right {
+  width: 50%;
+}
+
+label {
+  color: #929292;
+}
+
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 15px;
+  padding: 5px 0px;
+  border-color: #929292;
+  border-width: 1px;
+}
+
+#degreeinput {
+  width: 90%;
+  font-size: large;
+}
+
+#converttype {
+  width: 100%;
+  font-size: large;
+  margin-top: 15px;
+  padding: 5px 0px;
+  color: #474747;
+  border-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #929292;
+}
+
+.resultdiv {
+  padding: 10px 0px 10px 0px;
+}
+
+.resultdiv #resultoutput {
+  border-style: solid;
+  border-top: white;
+  border-left: white;
+  border-right: white;
+  color: #474747;
+  padding: 5px 0px;
+  border-width: 1px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  border-color: #929292;
+  width: 100%;
+  font-size: large;
+  background-color: #ffffff;
+  /* background-color: rgb(0, 196, 88); */
+}
+
+
+button {
+  background-color: #0076f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 30px;
+  padding: 10px;
+  width: 85%;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
